@@ -112,7 +112,7 @@
                             
                             <div class="text-right">
                                 <button class="btn btn-gradient-01" name="btnEnviar" type="submit">Guardar</button>
-                                <button class="btn btn-shadow" type="reset">Borrar datos</button>
+                                <button class="btn btn-shadow" href="/projects/vistaProyectos">Cancelar</button>
                             </div>
                         </form>
                          

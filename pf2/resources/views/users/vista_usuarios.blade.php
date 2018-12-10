@@ -12,7 +12,7 @@
         <div class="page-header">
         <div class="d-flex align-items-center">
                 @if(Auth::user()->tipo_usuario == "Empresa")
-                    <h2 class="page-header-title">Listado de usuarios</h2>
+                    <h2 class="page-header-title">Listado de freelancers</h2>
                 @else
                     <h2 class="page-header-title">Listado de empresas</h2>
                 @endif

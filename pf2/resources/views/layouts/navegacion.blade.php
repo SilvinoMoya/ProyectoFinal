@@ -30,13 +30,11 @@
                 </li>    
             @endif
 
-            @if(Auth::user()->tipo_usuario== "Empresa")
             <li><a href="#dropdown-forms" aria-expanded="false" data-toggle="collapse"><i class="la la-birthday-cake"></i><span>Comentarios</span></a>
                 <ul id="dropdown-forms" class="collapse list-unstyled pt-0">
-                    <li><a href="index.php?action=listado_premios">Listado de comentarios</a></li>
+                <li><a href="/comentariosAmiEmpresa/{{Auth::user()->id}}">Listado de comentarios</a></li>
                 </ul>
             </li>
-            @endif
 
             @if(Auth::user()->tipo_usuario== "Freelancer")
             <li><a href="#dropdown-tables" aria-expanded="false" data-toggle="collapse"><i class="la la-gear"></i><span>Proyectos de empresas</span></a>

@@ -10,7 +10,7 @@
             <!-- Begin Logo -->
             <div class="navbar-header">
                 <a href="db-default.html" class="navbar-brand">
-                    
+                    {{Auth::user()->tipo_usuario}}
                     <a href="{{ asset("admin/workana.jpg") }}">
                         <div class="brand-image">
                                 <img src="{{ asset("admin/workana.jpg") }}" alt="logo" class="logo-small">
@@ -35,9 +35,16 @@
               
                 <!-- End Notifications -->
                 <!-- User -->
+                @if(Auth::user()->tipo_usuario=="Empresa")
+                    Nombre de empresa: {{Auth::user()->name}}
+                @else
+                    Nombre de freelancer: {{Auth::user()->name}}
+                @endif
+                
                 <li class="nav-item dropdown"><a id="user" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><img src="{{ asset("admin/workana.jpg") }}" alt="..." class="avatar rounded-circle"></a>
                     <ul aria-labelledby="user" class="user-size dropdown-menu">
                         <li class="welcome">
+                                
                             <a href="/perfil/{{Auth::user()->id}}/edit" class="edit-profil"><i class="la la-gear"></i></a>
                             <img src="{{ asset("admin/workana.jpg") }}" alt="..." class="rounded-circle">
                         </li>
@@ -56,7 +63,7 @@
                            Tipo de usuario: {{Auth::user()->tipo_usuario}}                            </a>
                         </li>
                         
-                        <li><a rel="nofollow" href="index.php?action=salir" class="dropdown-item logout text-center"><i class="ti-power-off"></i></a></li>
+                        <li><a rel="nofollow" href="/logout" class="dropdown-item logout text-center"><i class="ti-power-off"></i></a></li>
                     </ul>
                 </li>
                 <!-- End User -->

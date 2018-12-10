@@ -37,14 +37,22 @@ Route::get('/users/vistaUsuarios','UsersController@vistaUsuarios');
 Route::get('/perfil/{id}/edit','PerfilController@edit');
 Route::post('/perfil/{id}/edit','PerfilController@update');
 
-
 //Route::get('/users/perfilFreelancer/{id}','UsersController@perfilFreelancer');
 
-Route::get('/users/{id}/info-freelancer','UsersController@informacion');
-//Route::post('/projects/{id}/edit','ProjectsController@update');
-
-
-
-
-
 Route::get('/projects/vistaProyectosEmpresas','ProjectsController@vistaProyectosEmpresas');
+
+
+Route::get('/users/{id}/info-freelancer','UsersController@informacion');
+
+
+Route::post('/users/{id_usuario_sesion}/{nombre_usuario_sesion}/{id_usuario_comentario}/{nombre}/comentario','UsersController@comentario');
+
+Route::get('logout','\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/projects/{id}/info-proyecto','ProjectsController@info_proyecto');
+
+Route::get('/comentariosAmiEmpresa/{id}','ProjectsController@comentariosAmiEmpresa');
+
+Route::post('/solicitud/Proyecto/{id_proyecto}/{id_empresa}','ProjectsController@solicitudProyecto');
+
+Route::post('/solicitud/proyecto/propuesta/{id_empresa}/{id_proyecto}','ProjectsController@solicitudProyectoPropuesta');
